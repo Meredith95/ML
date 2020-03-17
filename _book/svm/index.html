@@ -1,0 +1,394 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Support Vector Machine · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../dts/" />
+    
+    
+    <link rel="prev" href="../classification/READ.md" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Machine Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../feature/">
+            
+                <a href="../feature/">
+            
+                    
+                    Feature
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../classification/READ.md">
+            
+                <span>
+            
+                    
+                     Binary classiﬁer 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Support Vector Machine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../dts/">
+            
+                <a href="../dts/">
+            
+                    
+                    DTs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ensemble/">
+            
+                <a href="../ensemble/">
+            
+                    
+                    Ensemble
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../knn/">
+            
+                <a href="../knn/">
+            
+                    
+                    KNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../network/">
+            
+                <a href="../network/">
+            
+                    
+                    Deep Network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../nlp/">
+            
+                <a href="../nlp/">
+            
+                    
+                    NLP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../pca/">
+            
+                <a href="../pca/">
+            
+                    
+                    PCA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../recommender/">
+            
+                <a href="../recommender/">
+            
+                    
+                    Recommender System
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Support Vector Machine</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="support-vector-machine">Support Vector Machine</h1>
+<p>The SVMs are typically used on <strong>numerical</strong> data, but can and have been adapted to text, sequences. Besides, they will often be the method of choice on <strong>small</strong> datasets. It relies on <strong>distance</strong> between data points. </p>
+<p>The idea of SVMs is to find the <strong>maximum-margin hyper-plane</strong>. To increase the likelyhood of linear-separability, we often use a high-demensional mapping. </p>
+<p><a href="https://www.sohu.com/a/206572358_160850" target="_blank">svm</a></p>
+<p>There are a number of strategies to make them multi-class, two frequent strategies </p>
+<ol>
+<li><p>Train |C| one-versus-all classi&#xFB01;es and choose best</p>
+<p>&#x67D0;&#x4E00;&#x7C7B;&#x6837;&#x672C;&#x4E3A;&#x4E00;&#x7C7B;&#xFF0C;&#x5176;&#x4ED6;&#x7C7B;&#x522B;&#x6837;&#x672C;&#x4E3A;&#x4E00;&#x7C7B;&#xFF0C;&#x505A;K&#x4E2A;SVM</p>
+</li>
+<li><p>Train |C|(|C|&#x2212;1)/2 one-versus-one classi&#xFB01;es and vote for best </p>
+<p>&#x4EFB;&#x610F;&#x4E24;&#x4E2A;&#x6837;&#x672C;&#x4E4B;&#x95F4;&#x505A;SVM&#xFF0C;&#x5171;K(K-1)/2&#x4E2A;SVM</p>
+</li>
+<li><p>Using the class label as a feature</p>
+</li>
+</ol>
+<p>Positive semi-definite jernel function K(x,y)</p>
+<p><img src="C:\Users\warmp\Desktop\2222222.jpg" alt="2222222"></p>
+<h2 id="advantanges--disadvantanges">Advantanges &amp; Disadvantanges</h2>
+<p>Advantanges:</p>
+<ol>
+<li>Unique optimum </li>
+<li>It can over-fit, but well controlled</li>
+<li>Limited amount of training data</li>
+</ol>
+<p>Disadvantanges:</p>
+<ol>
+<li>It requires very well written optimisers.</li>
+<li>It can be very slow If the data set is large. The time complexity for training is O(P^3), P is the training patterns and it can be too slow if P&gt;&gt;1000</li>
+</ol>
+<h2 id="slack-variables">Slack variables</h2>
+<p>Relax constrains by slack variables. (&#x677E;&#x5F1B;&#x53D8;&#x91CF;)</p>
+<h2 id="kernel-functions">Kernel functions</h2>
+<p>Kernel functions are symmetric functions of two variables. </p>
+<p>Strong restriction: positive semi-definite </p>
+<p>When we use the kernel trick the time to compute the solution to the quadratic programming problem is  <strong>pN^3</strong> where N is the number of training examples and p is the number of feature</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../classification/READ.md" class="navigation navigation-prev " aria-label="Previous page:  Binary classiﬁer ">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../dts/" class="navigation navigation-next " aria-label="Next page: DTs">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Support Vector Machine","level":"1.4","depth":1,"next":{"title":"DTs","level":"1.5","depth":1,"path":"dts/README.md","ref":"dts/README.md","articles":[]},"previous":{"title":" Binary classiﬁer ","level":"1.3","depth":1,"path":"classification/READ.md","ref":"classification/READ.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"svm/README.md","mtime":"2020-03-17T09:12:35.511Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-17T15:24:43.014Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
