@@ -50,3 +50,4 @@ Larger variance, more complex machine.
 3. cluster to find examplars and recode data (RBF)
 
 # Qi
+# ML
